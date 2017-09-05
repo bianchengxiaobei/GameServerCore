@@ -69,7 +69,7 @@ public class MemoryCache<K,V> implements Cache<K, V>,Serializable
 	}
 
 	public List<V> getAllWaitingSave() {
-		ArrayList waiting = new ArrayList();
+		List waiting = new ArrayList();
 
 		Object value = this.queue.poll();
 		while (value != null) {

@@ -48,7 +48,7 @@ public class LRULinkedHashMap<K,V> extends LinkedHashMap<K, V>
 			this.lock.lock();
 			return super.remove(key);
 		}finally{
-			this.lock.lock();
-		} 
+			this.lock.unlock();
+		}
 	}
 }

@@ -71,6 +71,7 @@ public abstract class ClientServer extends Server implements IServer
 	    ClientServerConfig config = (ClientServerConfig)this.serverConfig;
 	    if (config != null)
 	    {
+    		System.out.println("zhong服务器："+config.getCenterServer() == null);
 	    	if (config.getCenterServer() != null)
 	    	{
 	    		int connected = 0;
@@ -101,6 +102,7 @@ public abstract class ClientServer extends Server implements IServer
 	    	}
 	    	for (int i=0; i<config.getGateServers().size();i++)
     		{
+	    		System.out.println("网关服务器："+config.getGateServers().size());
     			ServerInfo info = (ServerInfo)config.getGateServers().get(i);
     			int connected = 0;
     			while (connected < gateSessionNumber)

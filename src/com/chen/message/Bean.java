@@ -32,7 +32,10 @@ public abstract class Bean
 	protected void writeLong(IoBuffer buf, long value) {
 		buf.putLong(value);
 	}
-
+	protected void writeFloat(IoBuffer buf,float value)
+	{
+		buf.putFloat(value);
+	}
 	protected void writeBean(IoBuffer buf, Bean value) {
 		value.write(buf);
 	}
@@ -93,7 +96,10 @@ public abstract class Bean
 	protected long readLong(IoBuffer buf) {
 		return buf.getLong();
 	}
-
+	protected float readFloat(IoBuffer buf)
+	{
+		return buf.getFloat();
+	}
 	protected Bean readBean(IoBuffer buf, Class<? extends Bean> clazz) {
 		try {
 			Bean bean = (Bean) clazz.newInstance();
